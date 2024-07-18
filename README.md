@@ -47,7 +47,7 @@ O objetivo deste projeto é analisar os dados de vendas, clientes, produtos e fo
 - Média Mensal de Renda dos Clientes
 #### SELECT AVG(Renda_Mensal) as Media_Renda_Mensal FROM Clientes;
 
-![pergunta-1](img/pergunta-1.png)
+![pergunta-1](img/pergunta1.png)
 
 - Fornecedor com Maior Quantidade de Produtos
   #### SELECT 
@@ -63,8 +63,7 @@ O objetivo deste projeto é analisar os dados de vendas, clientes, produtos e fo
   #### ORDER BY 
   #### Quantidade_Total_Disponível DESC
   #### LIMIT 1;
-
-----------------------------
+![pergunta-3](img/pergunta3.png)
 - Mês com Maior Volume de Vendas
   #### SELECT 
   ####  strftime('%Y-%m', Data) as Mes,
@@ -77,7 +76,7 @@ O objetivo deste projeto é analisar os dados de vendas, clientes, produtos e fo
   #### ORDER BY 
   #### Valor_Total_Vendas DESC
   #### LIMIT 1;
--------------------------------------
+![pergunta-6](img/pergunta6.png)
 - Faixa Etária de Clientes que Compra Mais Produtos Orgânicos
   #### WITH Faixas_Etarias AS (
   ####  SELECT 
@@ -112,7 +111,7 @@ O objetivo deste projeto é analisar os dados de vendas, clientes, produtos e fo
   ####  Faixa_Etaria
   #### ORDER BY 
   ####  Quantidade_Total DESC;
---------------------------------------------------
+![pergunta-8](img/pergunta8.png)
 
 - Ticket Médio das Vendas
   #### SELECT 
@@ -120,7 +119,8 @@ O objetivo deste projeto é analisar os dados de vendas, clientes, produtos e fo
 #### FROM 
 ####    Vendas;
 
---------------------------------------------------
+![pergunta-7](img/pergunta7.png)
+
 - Categoria de Produtos Mais Vendida
 #### SELECT 
 ####    p.Categoria,
@@ -134,7 +134,9 @@ O objetivo deste projeto é analisar os dados de vendas, clientes, produtos e fo
 #### ORDER BY 
 ####   Quantidade_Total_Vendida DESC
 #### LIMIT 1;
---------------------------------------------
+
+![pergunta-2](img/pergunta2.png)
+
 ## Conclusão
 A análise dos dados da Mercado Verde forneceu diversos insights valiosos:
 
