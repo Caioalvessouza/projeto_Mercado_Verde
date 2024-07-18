@@ -11,3 +11,23 @@ O objetivo deste projeto é analisar os dados de vendas, clientes, produtos e fo
 ## Média Mensal de Renda dos Clientes
 
  - Calcular a média da renda mensal dos clientes para entender o perfil econômico da base de clientes.
+
+## Fornecedores com Maior Quantidade de Produtos
+
+- Identificar quais fornecedores fornecem a maior quantidade de produtos para otimizar o gerenciamento de estoque e parcerias.
+
+## Mês com Maior Volume de Vendas
+
+- Determinar qual mês teve o maior volume de vendas para analisar sazonalidade e planejar campanhas de marketing.
+
+## Faixa Etária de Clientes que Compra Mais Produtos Orgânicos
+
+- Descobrir quais faixas etárias estão mais inclinadas a comprar produtos orgânicos para direcionar estratégias de marketing.
+
+## Ticket Médio das Vendas
+
+- Calcular o ticket médio das vendas para entender o valor médio gasto por transação e ajustar políticas de preços e promoções.
+
+## Categoria de Produtos Mais Vendida
+
+- Identificar a categoria de produtos mais vendida para otimizar o mix de produtos e melhorar a oferta aos clientes.
