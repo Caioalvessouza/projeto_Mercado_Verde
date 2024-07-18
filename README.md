@@ -47,7 +47,7 @@ O objetivo deste projeto é analisar os dados de vendas, clientes, produtos e fo
 - Média Mensal de Renda dos Clientes
 #### SELECT AVG(Renda_Mensal) as Media_Renda_Mensal FROM Clientes;
 
-![Importação_de_Bibliotecas](img/pergunta - 1.png)
+![pergunta-1](img/pergunta-1.png)
 
 - Fornecedor com Maior Quantidade de Produtos
   #### SELECT 
