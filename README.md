@@ -31,3 +31,9 @@ O objetivo deste projeto é analisar os dados de vendas, clientes, produtos e fo
 ## Categoria de Produtos Mais Vendida
 
 - Identificar a categoria de produtos mais vendida para otimizar o mix de produtos e melhorar a oferta aos clientes.
+
+# Estratégia da Solução
+
+## Etapas nas Consultas em SQL
+ ### Criação de Tabelas
+ 
