@@ -112,6 +112,52 @@ O objetivo deste projeto é analisar os dados de vendas, clientes, produtos e fo
   ####  Faixa_Etaria
   #### ORDER BY 
   ####  Quantidade_Total DESC;
+--------------------------------------------------
+
+- Ticket Médio das Vendas
+  #### SELECT 
+  ####  SUM(Valor_Total) / COUNT(*) as Ticket_Medio
+#### FROM 
+####    Vendas;
+
+--------------------------------------------------
+- Categoria de Produtos Mais Vendida
+#### SELECT 
+####    p.Categoria,
+####    SUM(v.Quantidade) as Quantidade_Total_Vendida
+#### FROM 
+####    Vendas v
+#### JOIN 
+####    Produtos p ON v.ID_Produto = p.ID_Produto
+#### GROUP BY 
+####  p.Categoria
+#### ORDER BY 
+####   Quantidade_Total_Vendida DESC
+#### LIMIT 1;
+--------------------------------------------
+## Conclusão
+A análise dos dados da Mercado Verde forneceu diversos insights valiosos:
+
+#### Perfil Econômico dos Clientes:
+
+A média da renda mensal dos clientes ajuda a entender melhor o poder de compra e ajustar as estratégias de preço e produtos oferecidos.
+#### Gerenciamento de Fornecedores e Estoque:
+
+Identificar os fornecedores com maior quantidade de produtos permite uma melhor gestão de parcerias e estoque.
+#### Sazonalidade das Vendas:
+
+Conhecer o mês com maior volume de vendas auxilia no planejamento de campanhas de marketing e promoções sazonais.
+#### Segmentação de Mercado:
+
+Saber quais faixas etárias compram mais produtos orgânicos permite uma segmentação de mercado mais precisa e campanhas de marketing direcionadas.
+#### Ticket Médio:
+
+Calcular o ticket médio das vendas é essencial para entender o comportamento de compra dos clientes e ajustar as políticas de preços e promoções.
+##### Mix de Produtos:
+
+Identificar a categoria de produtos mais vendida ajuda a ajustar o mix de produtos e garantir que as ofertas atendam à demanda do mercado.
+Esses insights são fundamentais para que a Mercado Verde possa tomar decisões estratégicas informadas, melhorar a satisfação do cliente e otimizar suas operações.
+
 
   
 
