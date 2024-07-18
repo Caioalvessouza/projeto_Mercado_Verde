@@ -37,3 +37,83 @@ O objetivo deste projeto é analisar os dados de vendas, clientes, produtos e fo
 ## Etapas nas Consultas em SQL
  ### Criação de Tabelas
  
+- Clientes: Contém informações sobre os clientes, incluindo ID, nome, idade, e renda mensal.
+- Produtos: Inclui detalhes dos produtos, como ID, nome, categoria, e quantidade disponível.
+- Vendas: Registra as transações de vendas, com ID do cliente, ID do produto, quantidade e valor total.
+- Fornecedores: Dados sobre fornecedores, incluindo ID e nome.
+
+## Consultas SQL Principais
+
+- Média Mensal de Renda dos Clientes
+#### SELECT AVG(Renda_Mensal) as Media_Renda_Mensal FROM Clientes;
+
+---------------------
+
+- Fornecedor com Maior Quantidade de Produtos
+  #### SELECT 
+  ####  f.ID_Fornecedor,
+  ####  f.Nome_Fornecedor,
+  ####  SUM(p.Quantidade_Disponível) as Quantidade_Total_Disponível
+  #### FROM 
+  #### Fornecedores f
+  #### JOIN 
+  ####  Produtos p ON f.ID_Fornecedor = p.Fornecedor
+  #### GROUP BY 
+  #### f.ID_Fornecedor, f.Nome_Fornecedor
+  #### ORDER BY 
+  #### Quantidade_Total_Disponível DESC
+  #### LIMIT 1;
+
+----------------------------
+- Mês com Maior Volume de Vendas
+  #### SELECT 
+  ####  strftime('%Y-%m', Data) as Mes,
+  ####  SUM(Quantidade) as Quantidade_Total,
+  ####  SUM(Valor_Total) as Valor_Total_Vendas
+  ####  FROM 
+  #### Vendas
+  #### GROUP BY 
+  #### Mes
+  #### ORDER BY 
+  #### Valor_Total_Vendas DESC
+  #### LIMIT 1;
+-------------------------------------
+- Faixa Etária de Clientes que Compra Mais Produtos Orgânicos
+  #### WITH Faixas_Etarias AS (
+  ####  SELECT 
+  ####      c.ID_Cliente,
+  ####      c.Nome,
+  ####      c.Idade,
+  ####      v.Quantidade,
+  ####      v.Valor_Total,
+  ####      CASE
+  ####          WHEN c.Idade BETWEEN 0 AND 18 THEN '0-18'
+  ####          WHEN c.Idade BETWEEN 19 AND 30 THEN '19-30'
+  ####          WHEN c.Idade BETWEEN 31 AND 45 THEN '31-45'
+  ####          WHEN c.Idade BETWEEN 46 AND 60 THEN '46-60'
+  ####          ELSE '61+'
+  ####      END AS Faixa_Etaria
+  ####  FROM 
+  ####      Clientes c
+  ####  JOIN 
+  ####      Vendas v ON c.ID_Cliente = v.ID_Cliente
+  ####  JOIN
+  ####     Produtos p ON v.ID_Produto = p.ID_Produto
+  ####  WHERE 
+  ####      p.Nome_Produto LIKE '%Orgânico%'
+  #### )
+  #### SELECT 
+  ####  Faixa_Etaria,
+  ####  SUM(Quantidade) as Quantidade_Total,
+  ####  SUM(Valor_Total) as Valor_Total_Comprado
+  #### FROM 
+  ####  Faixas_Etarias
+  #### GROUP BY 
+  ####  Faixa_Etaria
+  #### ORDER BY 
+  ####  Quantidade_Total DESC;
+
+  
+
+
+
